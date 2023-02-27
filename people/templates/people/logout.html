@@ -1,0 +1,10 @@
+{% extends "myblog/layout.html" %}
+{% load static %}
+{% block content %}
+    <h2>Вы вышли из аккаунта! До новых встреч!</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Login Again <a href="{% url 'login' %}">Login Again</a>
+        </small>
+    </div>
+{% endblock content %}

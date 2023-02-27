@@ -1,0 +1,38 @@
+{% extends 'myblog/layout.html'%}
+{% load static %}
+{% block content %}
+    <div class="shell">
+        <div class="border">
+          <div id="main">
+            <div id="content" class="left">
+              <div class="projects">
+                <h3><a>Записи</a></h3>
+                {% for p in post %}
+                    <div class="item">
+                        <div class="image left">
+                            <a href="{{ p.url_post }}"><img src="{{ p.photo_post.url }}" width="190" height="150"/> </a>
+                            </div>
+                            <div class="text left">
+                              <h4><a href="{{ p.url_post }}">{{ p.topic_post }}</a></h4>
+
+                              <p>{{ p.short_info_post }}</p>
+                              <p>Автор: {{p.first_name_author}} {% if p.last_name_author %}{{ p.last_name_author }}{% endif %}</p>
+                            </div>
+                  <div class="cl">&nbsp;</div>
+                  </div>
+                {% endfor %}
+
+              </div>
+            </div>
+
+            <div class="cl">&nbsp;</div>
+          </div>
+
+
+        </div>
+
+        <div id="footer">
+          <p class="copy right">Copyright &copy;  2023 </p>
+        </div>
+      </div>
+{% endblock %}
